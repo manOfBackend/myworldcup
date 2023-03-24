@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -12,7 +13,7 @@
     "next": "13.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "*"
+    "ui": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -21,10 +22,10 @@
     "@types/react-dom": "^18.0.7",
     "autoprefixer": "^10.4.14",
     "eslint": "7.32.0",
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7",
-    "tsconfig": "*",
+    "tsconfig": "workspace:*",
     "typescript": "^4.5.3"
   }
 }

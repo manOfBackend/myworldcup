@@ -1,0 +1,6 @@
+packages:
+  - 'app/*'
+  - 'pages/**'
+  - 'components/**'
+  # exclude packages that are inside test directories
+  - '!__test__/**'
