@@ -10,7 +10,7 @@
     "preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
     "dev": "turbo run dev --filter=web",
-    "deploy": "turbo run build --filter=web --includeDependencies --no-deps",
+    "deploy": "turbo run build --filter=web",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
