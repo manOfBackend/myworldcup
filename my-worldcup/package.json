@@ -9,14 +9,16 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
-    "dev": "turbo run dev --filter web",
+    "dev": "turbo run dev --filter=web",
+    "deploy": "turbo run build --filter=web --includeDependencies --no-deps",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "latest",
+    "pnpm": "^7.15.0"
   },
   "engines": {
     "node": ">=14.0.0"
