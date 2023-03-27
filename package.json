@@ -10,7 +10,7 @@
     "start": "nps"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-custom": "*",
     "pnpm": "^7.15.0",
     "prettier": "latest",
     "turbo": "latest"
