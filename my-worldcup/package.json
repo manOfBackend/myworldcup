@@ -7,12 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "build": "turbo run build",
-    "dev": "turbo run dev --filter=web",
-    "deploy": "turbo run build --filter=web",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "start": "nps",
+    "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
