@@ -27,6 +27,7 @@ importers:
       eslint: 7.32.0
       eslint-config-custom: workspace:*
       next: 13.2.4
+      only-allow: ^1.1.1
       postcss: ^8.4.21
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -36,6 +37,7 @@ importers:
       ui: workspace:*
     dependencies:
       next: 13.2.4_hrdbe576m4w26u2yfpqpvbxyky
+      only-allow: 1.1.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       ui: link:../../packages/ui
