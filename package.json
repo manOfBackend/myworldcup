@@ -7,8 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "nps",
-    "preinstall": "npx only-allow pnpm"
+    "start": "nps"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
@@ -18,9 +17,6 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  },
-  "dependencies": {
-    "only-allow": "^1.1.1"
   },
   "packageManager": "pnpm@7.15.0"
 }
