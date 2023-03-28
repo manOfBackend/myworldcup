@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["ui"],
+  transpilePackages: ["ui", "lib"],
   experimental: {
     appDir: true,
   },
