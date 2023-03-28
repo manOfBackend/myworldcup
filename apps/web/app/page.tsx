@@ -1,3 +1,9 @@
+import { PromptInput } from "ui";
+
 export default function Page() {
-  return <h1 className="text-3xl font-bold underline">테스트 월드컵 게임</h1>;
+  return <main>
+    <h1 className="text-3xl font-bold underline">ChatGPT 이미지 만들기</h1>
+    <PromptInput />
+  </main> 
+    
 }
