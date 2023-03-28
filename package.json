@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "deploy": "turbo run build --scope=web"
+    "deploy": "turbo run build --scope=web --no-deps --include-dependencies"
   },
   "devDependencies": {
     "eslint-config-custom": "*",

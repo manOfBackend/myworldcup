@@ -8,9 +8,9 @@ module.exports = {
   scripts: {
     prepare: {
       default: `nps prepare.web`,
-      web: `yarn`,
+      web: `pnpm`,
       ci: {
-        web: `npx turbo prune --scope=web && cd out && yarn install --frozen-lockfile`,
+        web: `npx turbo prune --scope=web && cd out && pnpm install --frozen-lockfile`,
       },
     },
     build: {

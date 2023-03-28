@@ -10,14 +10,6 @@
     "node_modules"
   ],
   "compilerOptions": {
-    "paths": {
-      "@app/*": [
-        "./app/*"
-      ],
-      "@mock/*": [
-        "./mock/*"
-      ]
-    },
     "strictNullChecks": true
   }
 }
