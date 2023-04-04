@@ -10,6 +10,7 @@
     "node_modules"
   ],
   "compilerOptions": {
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "baseUrl": ".",
   }
 }
