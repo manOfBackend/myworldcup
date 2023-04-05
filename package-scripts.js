@@ -10,7 +10,7 @@ module.exports = {
       default: `nps prepare.web`,
       web: `pnpm`,
       ci: {
-        web: `npx turbo prune --scope=web && cd out && pnpm install --frozen-lockfile`,
+        web: `npx turbo prune --scope=web && cd out && pnpm install --no-frozen-lockfile`,
       },
     },
     build: {
