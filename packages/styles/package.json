@@ -1,0 +1,14 @@
+{
+  "name": "@hgpt/styles",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "animation.scss",
+    "window.scss"
+  ],
+  "devDependencies": {
+    "sass": "^1.59.2"
+  }
+}

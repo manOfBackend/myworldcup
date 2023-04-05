@@ -3,9 +3,14 @@
   "display": "React Library",
   "extends": "./base.json",
   "compilerOptions": {
-    "jsx": "react",
-    "lib": ["es2018", "dom"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "ESNext",
-    "target": "es6"
+    "target": "ES5",
+    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   }
 }
