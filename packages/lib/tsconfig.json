@@ -1,8 +1,10 @@
 {
-  "extends": "@hgpt/tsconfig/react-library.json",
-  "include": ["."],
+  "extends": "@hgpt/tsconfig/base.json",
   "compilerOptions": {
-    "baseUrl": "./src"
+    "target": "es5",
+    "jsx": "preserve",
+    "resolveJsonModule": true
   },
+  "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

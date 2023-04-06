@@ -1,1 +1,0 @@
-export { postSuggest } from './api';

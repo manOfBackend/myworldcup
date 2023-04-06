@@ -1,0 +1,1 @@
+export { default as postSuggest } from './postSuggest';
