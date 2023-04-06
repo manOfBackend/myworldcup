@@ -1,0 +1,17 @@
+{
+  "name": "@hgpt/store",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "@hgpt/tsconfig": "workspace:*",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "fuse.js": "^6.6.2",
+    "zustand": "^4.3.7"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "@hgpt/tsconfig/base.json",
+  "compilerOptions": {
+    "target": "es2015",
+    "jsx": "preserve",
+    "resolveJsonModule": true
+  },
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}
