@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
+export { default as ChatSendBox } from "./ChatSendBox";
+export { default as ChatItem } from "./ChatItem";
 export * from "./Button";
 export * from "./PromptInput";
-export * from "./ChatItem";
-export * from "./ChatSendBox";

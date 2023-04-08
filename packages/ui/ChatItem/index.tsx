@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./index.module.scss";
 
-export function ChatItem(props: {
+export default function ChatItem(props: {
   onClick?: () => void;
   onDelete?: () => void;
   title: string;

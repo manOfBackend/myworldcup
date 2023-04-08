@@ -6,7 +6,8 @@
   "license": "MIT",
   "files": [
     "animation.scss",
-    "window.scss"
+    "window.scss",
+    "global.scss"
   ],
   "devDependencies": {
     "sass": "^1.59.2"

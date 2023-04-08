@@ -1,5 +1,5 @@
-@import "./window.scss";
-@import "../styles/animation.scss";
+@import "@hgpt/styles/window.scss";
+@import "@hgpt/styles/animation.scss";
 
 @mixin container {
   background-color: var(--white);
@@ -421,7 +421,7 @@
 }
 
 .chat-input-send {
-  background-color: var(--primary);
+  background-color: var(--primary) !important;
   color: white;
 
   position: absolute;

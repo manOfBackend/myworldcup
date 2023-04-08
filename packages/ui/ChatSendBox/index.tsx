@@ -1,4 +1,4 @@
-import React, { forwardRef, HTMLAttributes, useRef, useState } from "react";
+import React, { forwardRef, HTMLAttributes } from "react";
 
 import { IconButton } from "../IconButton";
 import SendWhiteIcon from "../icons/send-white.svg";
@@ -19,7 +19,7 @@ const ChatSendBox = forwardRef<HTMLTextAreaElement, ChatSendBoxProps>(
           <textarea
             ref={ref}
             className={styles["chat-input"]}
-            placeholder={""}
+            placeholder={"222"}
             rows={2}
             onInput={(e) => onInput(e.currentTarget.value)}
             value={userInput}

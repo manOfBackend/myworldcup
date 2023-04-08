@@ -9,14 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "lib": "workspace:*",
+    "@hgpt/lib": "workspace:*",
     "next": "13.2.4",
     "openai": "^3.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "@svgr/webpack": "^7.0.0",
     "@hgpt/tsconfig": "workspace:*",
     "@hgpt/ui": "workspace:*",
-    "@hgpt/styles": "workspace:*"
+    "@hgpt/styles": "workspace:*",
+    "@hgpt/store": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

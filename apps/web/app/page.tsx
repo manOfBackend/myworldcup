@@ -16,13 +16,10 @@ export default function Page() {
     <section>
       <div className="form-box">
         <div className="form-value">
-          <form action="" onSubmit={handleClickLogin}>
+          <form onSubmit={handleClickLogin}>
             <h2>HGPT Ver 0.1</h2>
-            <div className="inputbox">
-              <input id="email" type="email" required />
-              <label htmlFor="email">Email</label>
-            </div>
-            <div className="inputbox">
+            <p>패스워드가 뭘까용</p>
+            <div className="py-5">
               <input id="password" type="password" required />
               <label htmlFor="password">Password</label>
             </div>
