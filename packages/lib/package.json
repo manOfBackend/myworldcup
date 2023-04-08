@@ -11,6 +11,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "openai": "^3.2.1",
     "use-debounce": "^9.0.4"
   }
 }
