@@ -4,13 +4,13 @@ import { PropsWithChildren } from "react";
 import "./global.css";
 
 export const metadata = {
-  title: "hyunBell 토이 프로젝트",
-  description: "hyunBell",
+  title: "HGPT CHAT",
+  description: "2023 1st TOY PROJECT - HYUNBELL",
 };
 
 export default function RootLayout({ children }: PropsWithChildren<unknown>) {
   return (
-    <html lang="en">
+    <html lang="kr">
       <body>{children}</body>
     </html>
   );

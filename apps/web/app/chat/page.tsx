@@ -1,9 +1,12 @@
 "use client";
 
+import type Message from "@hgpt/lib/types";
 import { useDebouncedCallback } from "@hgpt/lib/use-debounce";
-import { type Prompt, usePromptStore } from "@hgpt/store";
-import { ChatItem, ChatSendBox } from "@hgpt/ui";
+import { usePromptStore, type Prompt } from "@hgpt/store";
+import { ChatSendBox, Markdown } from "@hgpt/ui";
 import { useLayoutEffect, useRef, useState } from "react";
+
+import styles from "./home.module.scss";
 
 const SEARCH_TEXT_LIMIT = 30;
 
@@ -62,19 +65,109 @@ export default function Page() {
     { leading: true, trailing: true }
   );
 
+  const messages: Message[] = [
+    {
+      content: "test content",
+      date: "2023-04-10",
+      role: "user",
+    },
+    {
+      content: "test content",
+      date: "2023-04-10",
+      role: "system",
+    },
+    {
+      content: "test content",
+      date: "2023-04-10",
+      role: "system",
+    },
+    {
+      content: "test content",
+      date: "2023-04-10",
+      role: "user",
+    },
+    {
+      content: "test content",
+      date: "2023-04-10",
+      role: "user",
+    },
+  ];
+
   return (
-    <section className="flex flex-col">
-      <ChatItem count={1} selected time="2023-05-07" title="test" />
-      <ChatItem count={1} selected={false} time="2023-05-07" title="test" />
-      <ChatSendBox
-        ref={inputRef}
-        autoFocus
-        onInput={onInput}
-        onInputKeyDown={onInputKeyDown}
-        onUserSubmit={onUserSubmit}
-        userInput={userInput}
-      />
-    </section>
+    <div className={`${styles.container}`}>
+      <div className={styles["window-content"]}>
+        <div className={styles.chat}>
+          <div className={styles["window-header"]}>
+            <div className={styles["window-header-title"]}>
+              <div className={`${styles["window-header-main-title"]} ${styles["chat-body-title"]}`}>
+                HGPT CHAT
+              </div>
+              <div className={styles["window-header-sub-title"]}>무엇이든 질문하세요.</div>
+            </div>
+          </div>
+
+          <div
+            className={styles["chat-body"]}
+            ref={scrollRef}
+            onTouchStart={() => {
+              inputRef.current?.blur();
+              setAutoScroll(false);
+            }}>
+            {messages.map((message, i) => {
+              const isUser = message.role === "user";
+
+              return (
+                <div key={i} className={isUser ? styles["chat-message-user"] : styles["chat-message"]}>
+                  <div className={styles["chat-message-container"]}>
+                    <div className={styles["chat-message-avatar"]}>
+                      {/* <Avatar role={message.role} /> */}
+                    </div>
+                    {(message.isPreview || message.streaming) && (
+                      <div className={styles["chat-message-status"]}>...</div>
+                    )}
+                    <div className={styles["chat-message-item"]}>
+                      {!isUser && !(message.isPreview || message.content.length === 0) && (
+                        <div className={styles["chat-message-top-actions"]}>
+                          {message.streaming ? (
+                            <div className={styles["chat-message-top-action"]}>중단</div>
+                          ) : (
+                            <div className={styles["chat-message-top-action"]}>재전송</div>
+                          )}
+
+                          <div className={styles["chat-message-top-action"]}>복사</div>
+                        </div>
+                      )}
+                      {(message.isPreview || message.content.length === 0) && !isUser ? (
+                        <>...</>
+                      ) : (
+                        <div className="markdown-body">
+                          <Markdown content={message.content} />
+                        </div>
+                      )}
+                    </div>
+                    {!isUser && !message.isPreview && (
+                      <div className={styles["chat-message-actions"]}>
+                        <div className={styles["chat-message-action-date"]}>
+                          {message.date.toLocaleString()}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <ChatSendBox
+            ref={inputRef}
+            autoFocus
+            onInput={onInput}
+            onInputKeyDown={onInputKeyDown}
+            onUserSubmit={onUserSubmit}
+            userInput={userInput}
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 
