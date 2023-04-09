@@ -125,11 +125,17 @@ importers:
   packages/lib:
     specifiers:
       '@hgpt/tsconfig': workspace:*
+      '@types/spark-md5': ^3.0.2
+      eventsource-parser: ^1.0.0
       openai: ^3.2.1
+      spark-md5: ^3.0.2
       typescript: ^4.9.4
       use-debounce: ^9.0.4
     dependencies:
+      '@types/spark-md5': 3.0.2
+      eventsource-parser: 1.0.0
       openai: 3.2.1
+      spark-md5: 3.0.2
       use-debounce: 9.0.4
     devDependencies:
       '@hgpt/tsconfig': link:../tsconfig
@@ -2159,6 +2165,10 @@ packages:
       '@types/node': 17.0.45
     dev: true
 
+  /@types/spark-md5/3.0.2:
+    resolution: {integrity: sha512-82E/lVRaqelV9qmRzzJ1PKTpyrpnT7mwdneKNJB9hUtypZDMggloDfFUCIqRRx3lYRxteCwXSq9c+W71Vf0QnQ==}
+    dev: false
+
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
@@ -3588,6 +3598,11 @@ packages:
   /etag/1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /eventsource-parser/1.0.0:
+    resolution: {integrity: sha512-9jgfSCa3dmEme2ES3mPByGXfgZ87VbP97tng1G2nWwWx6bV2nYxm2AWCrbQjXToSe+yYlqaZNtxffR9IeQr95g==}
+    engines: {node: '>=14.18'}
     dev: false
 
   /express/4.18.2:
@@ -5658,6 +5673,10 @@ packages:
 
   /space-separated-tokens/2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
+    dev: false
+
+  /spark-md5/3.0.2:
+    resolution: {integrity: sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==}
     dev: false
 
   /sprintf-js/1.0.3:
