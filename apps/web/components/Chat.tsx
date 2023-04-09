@@ -88,7 +88,6 @@ export default function Chat() {
 
   // preview messages
   const messages = context
-    .concat(session.messages as RenderMessage[])
     .concat(
       isLoading
         ? [
