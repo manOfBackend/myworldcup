@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import { OpenAIApi } from "openai";
 import { Configuration } from "openai";
 

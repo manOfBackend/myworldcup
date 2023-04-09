@@ -21,7 +21,6 @@ export default function Page() {
             <p>패스워드가 뭘까용</p>
             <div className="py-5">
               <input id="password" type="password" required />
-              <label htmlFor="password">Password</label>
             </div>
             <button>Log in</button>
           </form>
