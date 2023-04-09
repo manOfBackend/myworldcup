@@ -100,7 +100,7 @@ export const useChatStore = create<ChatStore>()(
           },
           onError(error, statusCode) {
             if (statusCode === 401) {
-              botMessage.content = "Unauthorized";
+              botMessage.content = "인증 코드가 없어요.\nhyunBell 님에게 인증 코드를 발급 받으세요.";
             } else {
               botMessage.content += "\n\n" + "Error from chat store";
             }

@@ -32,7 +32,6 @@ export async function requestChatStream(
   options?: {
     filterBot?: boolean;
     modelConfig?: ModelConfig;
-    apiKey: string;
     onMessage: (message: string, done: boolean) => void;
     onError: (error: Error, statusCode?: number) => void;
     onController?: (controller: AbortController) => void;
@@ -55,7 +54,6 @@ export async function requestChatStream(
         "Content-Type": "application/json",
         path: "v1/chat/completions",
         // eslint-disable-next-line turbo/no-undeclared-env-vars
-        token: options ? options.apiKey : "",
       },
       body: JSON.stringify(req),
       signal: controller.signal,

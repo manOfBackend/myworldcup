@@ -43,7 +43,9 @@ export default function Chat() {
     setUserInput("");
     setPromptHints([]);
     setAutoScroll(true);
-    chatStore.onUserInput(userInput);
+    chatStore.onUserInput(userInput).then(() => {
+      setIsLoading(false);
+    });
   };
 
   const onInputKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
