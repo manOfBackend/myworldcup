@@ -11,9 +11,8 @@ export const copyToClipboard = async (text: string, onAfter?: () => void) => {
   } finally {
     onAfter?.();
   }
-}
-
+};
 
 export default {
-  copyToClipboard
-}
+  copyToClipboard,
+};

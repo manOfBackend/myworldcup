@@ -1,5 +1,6 @@
 import { copyToClipboard } from "@hgpt/lib/clipboard";
-import { RefObject, useEffect, useRef, useState } from "react";
+import type { RefObject } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import RemarkBreaks from "remark-breaks";
 import RemarkGfm from "remark-gfm";
@@ -17,7 +18,8 @@ export function PreCode(props: { children: any }) {
             const code = ref.current.innerText;
             copyToClipboard(code);
           }
-        }}></span>
+        }}
+      />
       {props.children}
     </pre>
   );
@@ -53,7 +55,7 @@ export default function Markdown(props: { content: string }) {
       components={{
         pre: PreCode,
       }}
-      linkTarget={"_blank"}>
+      linkTarget="_blank">
       {props.content}
     </ReactMarkdown>
   );

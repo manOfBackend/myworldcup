@@ -1,5 +1,5 @@
 import "@hgpt/styles/global.scss";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 import "./global.css";
 

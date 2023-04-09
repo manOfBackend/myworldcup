@@ -1,4 +1,4 @@
 const postSuggest = (input: string) => {
-  return 'suggest';
-}
+  return "suggest";
+};
 export default postSuggest;

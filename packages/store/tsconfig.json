@@ -1,9 +1,15 @@
 {
   "extends": "@hgpt/tsconfig/base.json",
   "compilerOptions": {
-    "target": "es2015",
+    "target": "ES2015",
+    "lib": ["dom", "dom.iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "module": "ESNext",
     "jsx": "preserve",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "downlevelIteration": true
   },
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]

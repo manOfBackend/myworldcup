@@ -35,8 +35,9 @@ export default function Page() {
   };
 
   const onInputKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    onUserSubmit();
-    e.preventDefault();
+    // console.log("aaa");
+    // onUserSubmit();
+    // e.preventDefault();
   };
 
   const onInput = (text: string) => {

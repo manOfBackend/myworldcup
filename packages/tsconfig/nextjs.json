@@ -5,8 +5,8 @@
   "compilerOptions": {
     "declaration": false,
     "declarationMap": false,
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2015",
+    "lib": ["dom", "dom.iterable", "esnext", "ES2015"],
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

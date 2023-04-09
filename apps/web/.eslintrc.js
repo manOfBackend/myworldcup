@@ -1,4 +1,1 @@
-module.exports = {
-  root: true,
-  extends: ["custom"],
-};
+module.exports = require("@hgpt/config/eslint-preset");

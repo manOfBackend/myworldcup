@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FormEvent } from "react";
+import type { FormEvent } from "react";
 
 import "./global.css";
 

@@ -1,4 +1,5 @@
-import React, { forwardRef, HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
+import React, { forwardRef } from "react";
 
 import { IconButton } from "../IconButton";
 import SendWhiteIcon from "../icons/send-white.svg";
@@ -19,7 +20,7 @@ const ChatSendBox = forwardRef<HTMLTextAreaElement, ChatSendBoxProps>(
           <textarea
             ref={ref}
             className={styles["chat-input"]}
-            placeholder={"222"}
+            placeholder="한글로 질문하셔도 HGPT가 영어로 번역하여 전달합니다."
             rows={2}
             onInput={(e) => onInput(e.currentTarget.value)}
             value={userInput}
@@ -30,7 +31,7 @@ const ChatSendBox = forwardRef<HTMLTextAreaElement, ChatSendBoxProps>(
           />
           <IconButton
             icon={<SendWhiteIcon />}
-            text={"전송"}
+            text="전송"
             className={styles["chat-input-send"]}
             noDark
             onClick={onUserSubmit}
@@ -40,5 +41,7 @@ const ChatSendBox = forwardRef<HTMLTextAreaElement, ChatSendBoxProps>(
     );
   }
 );
+
+ChatSendBox.displayName = "ChatSendBox";
 
 export default ChatSendBox;

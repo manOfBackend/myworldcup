@@ -1,6 +1,6 @@
+import Fuse from "fuse.js";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import Fuse from "fuse.js";
 
 export interface Prompt {
   id?: number;
@@ -99,19 +99,16 @@ export const usePromptStore = create<PromptStore>()(
                     ({
                       title,
                       content,
-                    } as Prompt),
+                    } as Prompt)
                 );
               })
-              .concat([...(state?.prompts?.values() ?? [])]);
+              .concat([...state?.prompts?.values()]);
 
-            const allPromptsForSearch = builtinPrompts.reduce(
-              (pre, cur) => pre.concat(cur),
-              [],
-            );
+            const allPromptsForSearch = builtinPrompts.reduce((pre, cur) => pre.concat(cur), []);
             SearchService.count.builtin = res.en.length + res.cn.length;
             SearchService.init(allPromptsForSearch);
           });
       },
-    },
-  ),
+    }
+  )
 );
