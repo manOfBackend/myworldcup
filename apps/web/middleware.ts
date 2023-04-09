@@ -1,0 +1,59 @@
+import { md5 } from "@hgpt/lib/crypto";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+
+import { ACCESS_CODES } from "./app/api/access";
+
+export const config = {
+  matcher: ["/api/chat-stream"],
+};
+
+export function middleware(req: NextRequest) {
+  const accessCode = req.headers.get("access-code");
+  const token = req.headers.get("token");
+  const hashedCode = md5.hash(accessCode ?? "").trim();
+
+  console.log("[Auth] allowed hashed codes: ", [...ACCESS_CODES]);
+  console.log("[Auth] got access code:", accessCode);
+  console.log("[Auth] hashed access code:", hashedCode);
+
+  if (ACCESS_CODES.size > 0 && !ACCESS_CODES.has(hashedCode) && !token) {
+    return NextResponse.json(
+      {
+        error: true,
+        needAccessCode: true,
+        msg: "Please check your access code.",
+      },
+      {
+        status: 401,
+      }
+    );
+  }
+
+  if (!token) {
+    // eslint-disable-next-line turbo/no-undeclared-env-vars
+    const apiKey = process.env.OPENAI_KEY;
+    if (apiKey) {
+      console.log("[Auth] set system token");
+      req.headers.set("token", apiKey);
+    } else {
+      return NextResponse.json(
+        {
+          error: true,
+          msg: "Empty Api Key",
+        },
+        {
+          status: 401,
+        }
+      );
+    }
+  } else {
+    console.log("[Auth] set user token");
+  }
+
+  return NextResponse.next({
+    request: {
+      headers: req.headers,
+    },
+  });
+}
