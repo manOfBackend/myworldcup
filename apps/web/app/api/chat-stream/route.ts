@@ -15,7 +15,6 @@ async function createStream(req: NextRequest) {
     console.log("[Stream] error ", content);
     return "```json\n" + content + "```";
   }
-
   const stream = new ReadableStream({
     async start(controller) {
       function onParse(event: any) {
