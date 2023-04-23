@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import type { DecodedIdToken } from "firebase-admin/lib/auth/token-verifier";
 import type { UserCredential } from "firebase/auth";
 
@@ -7,17 +8,15 @@ export async function getDecodedToken(userToken: string): Promise<DecodedIdToken
   if (!userToken) return null;
 
   try {
-    const baseUrl = "http://localhost:3000";
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
-    const decodedToken: DecodedIdToken = await fetch(`${baseUrl}/api/verifyIdToken`, {
+    const decodedToken = await fetch(`${baseUrl}/api/verifyIdToken`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ userToken }),
     }).then((res) => res.json());
-
-    if (decodedToken.error) return null;
 
     return decodedToken;
   } catch (error) {
@@ -26,14 +25,12 @@ export async function getDecodedToken(userToken: string): Promise<DecodedIdToken
   }
 }
 
-export function getUserFromDecodedToken(decodedToken: DecodedIdToken, userToken: string): User {
-  const {
-    uid,
-    name,
-    email,
-    picture: photoURL,
-    firebase: { sign_in_provider: provider },
-  } = decodedToken;
+export function getUserFromDecodedToken(decodedToken: DecodedIdToken, userToken: string): User | null {
+  if (!decodedToken) return null;
+
+  const { uid, name, email, picture: photoURL, firebase } = decodedToken;
+
+  const provider = firebase?.sign_in_provider;
 
   return {
     uid,

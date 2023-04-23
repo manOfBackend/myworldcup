@@ -1,8 +1,8 @@
-import "@hgpt/styles/global.scss";
+// import "@hgpt/styles/global.scss";
 import Head from "next/head";
 import type { PropsWithChildren } from "react";
 
-import "./global.css";
+import { Providers } from "./Providers";
 
 export const metadata = {
   title: "HGPT CHAT",
@@ -19,7 +19,9 @@ export default function RootLayout({ children }: PropsWithChildren<unknown>) {
         />
         <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)" />
       </Head>
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

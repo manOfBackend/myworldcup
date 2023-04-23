@@ -3,8 +3,6 @@
 import { useRouter } from "next/navigation";
 import type { FormEvent } from "react";
 
-import "./global.css";
-
 export default function Page() {
   const router = useRouter();
 
